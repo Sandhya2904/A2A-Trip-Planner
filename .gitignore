@@ -20,7 +20,7 @@ frontend/dist/
 dist/
 
 # Local app data
-storage/
+/storage/
 data/
 app/data/
 
