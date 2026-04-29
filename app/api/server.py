@@ -52,7 +52,7 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
-application.add_middleware(
+    application.add_middleware(
     CORSMiddleware,
     allow_origins=[
         *settings.allowed_origins,
