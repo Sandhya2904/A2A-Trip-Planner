@@ -1,0 +1,33 @@
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+*.env
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Frontend
+frontend/node_modules/
+node_modules/
+frontend/dist/
+dist/
+
+# Local app data
+storage/
+data/
+app/data/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Logs
+*.log
+
+.streamlit/
