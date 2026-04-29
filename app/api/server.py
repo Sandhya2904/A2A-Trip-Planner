@@ -52,13 +52,19 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
-    application.add_middleware(
-        CORSMiddleware,
-        allow_origins=settings.allowed_origins,
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
+application.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        *settings.allowed_origins,
+        "https://a2-a-trip-planner.vercel.app",
+    ],
+    allow_origin_regex=(
+        r"^https://a2-a-trip-planner(-[a-z0-9]+)?-sandhya2904s-projects\.vercel\.app$"
+    ),
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
     @application.middleware("http")
     async def request_context_middleware(request: Request, call_next):
